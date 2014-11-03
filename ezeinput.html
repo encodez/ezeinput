@@ -1,101 +1,66 @@
 <html>
 <head>
+<link href="ezeinput.css" media="all" rel="stylesheet" type="text/css" />
 <style>
 .preloader {
 	background: url('close.gif');
 	width:0;
 	height:0;
 }
-.userbox {
-	width: 300px;
-	border:1px #ccc solid;
-	min-height: 30px;
-	padding-bottom:10px;
-}
-#txtUser {
-	border:0;
-	width: 30%;
-	float:left;
-}
-.userbox .single {
-	background-color: #ccc;
-	border:1px #999 solid;
-	margin:1px;
-	border-radius: 2px;
-	float:left;
-	padding: 1px 5px;
-}
-.userbox .single .bttnClose {
-	margin-left:5px;
-	cursor: pointer;
-}
 </style>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="jquery.ezeinput.js"></script>
 <script>
-	var closeButton8x8 = "close.gif";
 	$(document).ready(function() {
-		EzeInput.init();
-		$(".userbox input[type=text]").each(function() {
-			$(this).keydown(function(e) {
-				var key = (window.Event) ? e.which : e.keyCode;
-				if (key == 188) {
-					var currentVal = $(this).val();
-					if(validate(currentVal)) {
-						$(this).val("");
-						var newItem = "<span class='single'><span class='userValSpan'>" + currentVal + "</span><img class='bttnClose' src='" + closeButton8x8 + "' width='8' height='8' /></span>";
-						//$(this).parent().prepend(newItem);
-						$(this).before(newItem);
-					}
-					return false;
-				}
-			});				
+		//EzeInput.init();
+		//$(".userbox input[type=text]").ezeInput({application_path: '', close_button: 'close.gif'});
+		$(".ezeinput").ezeInput();
+		$(".ezeinput_2").ezeInput();
+		$("#btn_get_values").click(function() {
+			var vals = $(".ezeinput").ezeInput('get');
+			alert(JSON.stringify(vals));
+		});
+		$("#btn_get_values_2").click(function() {
+			var vals = $(".ezeinput_2").ezeInput('get');
+			alert(JSON.stringify(vals));
 		});
 		
-		$(document).on("click", ".userbox .single .bttnClose", function() {
-			$(this).parent().remove();
-		});
-		
-		$("#bttnSubmit").click(function() {
-			var textval = "";
-			$(".userbox .single .userValSpan").each(function() {
-				textval += $(this).text() + "\n";				
-			});
-			if (textval != "")
-				alert(textval);
-			else
-				alert("please enter values first.");
-				
-			$("input[type=text]:first").focus();
-		});
-		
-		$(".userbox").click(function() {
-			$("#txtUser", this).focus();			
-		});
-		
-		$("input[type=text]:first").focus();
 	});
 	
-	validate = function(item) {
-		if (item != "" || item != null)
-			return true;
-		return false;
-	};
+	//validate = function(item) {
+		
+	//};
 </script>
 </head>
 <body>
 <div class="preloader"></div>
 <div>
-<h1>Enter values :</h1>
-<div class="container"><div class="userbox">
-<input type="text" value="" id="txtUser" /><div style="clear:both;"></div></div>
-<p>Enter comma seperated values.</p>
-<div><input type="button" value="Get Values" id="bttnSubmit" class="mybuttons" /></div>
-</div></div>
+	<h1>Enter values :</h1>
+</div>
+
+<div style="width:500px;">
+	<div>
+		<input type="text" value="" id="" class="ezeinput" />	<br />
+		Enter comma seperated values
+	</div>
+	<div>
+		<input type="button" value="Get Input Values" id="btn_get_values" />
+	</div>
+</div>
+<br />
+<div style="width:500px;">
+	<div>
+		<input type="text" value="" id="" class="ezeinput_2" />	<br />
+		Enter comma seperated values
+	</div>
+	<div>
+		<input type="button" value="Get Input Values" id="btn_get_values_2" />
+	</div>
+</div>
 <style>
 body {
 	margin:0;
-	padding:0;
+	padding:20px;
 	background: #99CCFF;
 }
 h1 {
@@ -106,27 +71,6 @@ h1 {
 }
 .container {
 	padding: 20px;
-}
-.userbox {
-	background: #fff;
-	border:1px #0066CC solid;
-}
-.mybuttons {
-	padding: 20px 50px;
-	margin-top: 10px;
-	background-color: #009900;
-	border:0;
-	font-weight:bold;
-	color:#fff;
-	font-family: verdana;
-}
-.userbox .single {
-	background: #FFFFCC; /* for non-css3 browsers */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFCC', endColorstr='#FFCC00'); /* for IE */
-	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFCC), to(#FFCC00)); /* for webkit browsers */
-	background: -moz-linear-gradient(top,  #FFFFCC,  #FFCC00); /* for firefox 3.6+ */
-	box-shadow: 1px 1px 1px #ccc;
-	border: 1px #FF9900 solid;
 }
 p {
 	margin:0;
