@@ -1,0 +1,30 @@
+body {
+	margin:0;
+	padding:20px;
+	background: #99CCFF;
+}
+
+h1 {
+	background: #0066CC;
+	margin-top: 0;
+	padding:10px 50px;
+	color: #fff;
+}
+
+p {
+	margin:0;
+	padding:0;
+	color: #333;
+	font-family:sans-serif;
+	font-size:12px;
+}
+
+.container {
+	padding: 20px;
+}
+
+.preloader {
+	background: url('close.gif');
+	width:0;
+	height:0;
+}

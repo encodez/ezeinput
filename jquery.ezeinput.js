@@ -1,8 +1,26 @@
+/*!
+ * ezeinput - jQuery Plugin
+ * version: 1.0 (Tue, 03 Nov 2014)
+ * @requires jQuery v1.8 or later
+ *
+ * Examples at https://github.com/encodez/ezeinput
+ * License: GNU GENERAL PUBLIC LICENSE
+ *
+ * Example and documentation will be available soon at http://blog.encodez.com/ezeinput
+ *
+ * Copyright 2014 Muneer Shaheed - muneer@encodez.com
+ *
+ * I'd love credit or a shoutout, though.
+ * twitter: muneerlk
+ * http://www.encodez.com/blog
+ *
+ */
 (function( $ ) {
 
 	var settings = {
 		application_path : '',
-		close_button : 'close.gif'
+		close_button : 'close.gif',
+		key_sperator : 188
 	};
 
     $.fn.ezeInput = function( options ) {
@@ -22,7 +40,7 @@
 	    	$(this).each(function() {
 				$(this).keydown(function(e) {
 					var key = (window.Event) ? e.which : e.keyCode;
-					if (key == 188) {
+					if (key == settings.key_sperator) {
 						ezeinputify($(this));
 						return false;
 					}

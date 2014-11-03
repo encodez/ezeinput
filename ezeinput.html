@@ -1,84 +1,55 @@
 <html>
 <head>
-<link href="ezeinput.css" media="all" rel="stylesheet" type="text/css" />
-<style>
-.preloader {
-	background: url('close.gif');
-	width:0;
-	height:0;
-}
-</style>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="jquery.ezeinput.js"></script>
-<script>
-	$(document).ready(function() {
-		//EzeInput.init();
-		//$(".userbox input[type=text]").ezeInput({application_path: '', close_button: 'close.gif'});
-		$(".ezeinput").ezeInput();
-		$(".ezeinput_2").ezeInput();
-		$("#btn_get_values").click(function() {
-			var vals = $(".ezeinput").ezeInput('get');
-			alert(JSON.stringify(vals));
-		});
-		$("#btn_get_values_2").click(function() {
-			var vals = $(".ezeinput_2").ezeInput('get');
-			alert(JSON.stringify(vals));
-		});
-		
-	});
-	
-	//validate = function(item) {
-		
-	//};
-</script>
+	<title>ezeInput | jQuery plugin by encodez systems.</title>
+	<link href="styles.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="jquery.ezeinput.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="preloader"></div>
-<div>
-	<h1>Enter values :</h1>
-</div>
+	<div class="preloader"></div>
+	<div>
+		<h1>Enter values :</h1>
+	</div>
 
-<div style="width:500px;">
-	<div>
-		<input type="text" value="" id="" class="ezeinput" />	<br />
-		Enter comma seperated values
+	<div style="width:500px;">
+	<p>Names</p>
+		<div>
+			<input type="text" value="" id="names" class="ezeinput" />	<br />
+			Enter comma seperated values
+		</div>
+		<div>
+			<input type="button" value="Get Names" id="btn_get_values" />
+		</div>
 	</div>
-	<div>
-		<input type="button" value="Get Input Values" id="btn_get_values" />
+	<br />
+	<div style="width:500px;">
+	<p>Locations</p>
+		<div>
+			<input type="text" value="" id="locations" class="ezeinput" />	<br />
+			Enter comma seperated values
+		</div>
+		<div>
+			<input type="button" value="Get Locations" id="btn_get_values_2" />
+		</div>
 	</div>
-</div>
-<br />
-<div style="width:500px;">
-	<div>
-		<input type="text" value="" id="" class="ezeinput_2" />	<br />
-		Enter comma seperated values
-	</div>
-	<div>
-		<input type="button" value="Get Input Values" id="btn_get_values_2" />
-	</div>
-</div>
-<style>
-body {
-	margin:0;
-	padding:20px;
-	background: #99CCFF;
-}
-h1 {
-	background: #0066CC;
-	margin-top: 0;
-	padding:10px 50px;
-	color: #fff;
-}
-.container {
-	padding: 20px;
-}
-p {
-	margin:0;
-	padding:0;
-	color: #333;
-	font-family:sans-serif;
-	font-size:12px;
-}
-</style>
+	<style>
+	</style>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="jquery.ezeinput.js"></script>
+	<script>
+		$(document).ready(function() {
+			// input 1
+			$(".ezeinput").ezeInput();
+
+			$("#btn_get_values").click(function() {
+				var vals = $("#names").ezeInput('get');
+				alert(JSON.stringify(vals));
+			});
+			$("#btn_get_values_2").click(function() {
+				var vals = $("#locations").ezeInput('get');
+				alert(JSON.stringify(vals));
+			});
+			
+		});
+	</script>
 </body>
 <html>
