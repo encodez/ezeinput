@@ -1,7 +1,7 @@
 /*!
  * ezeinput - jQuery Plugin
  * version: 1.0 (Tue, 03 Nov 2014)
- * @requires jQuery v1.8 or later
+ * @requires jQuery v1.8 or above
  *
  * Examples at https://github.com/encodez/ezeinput
  * License: GNU GENERAL PUBLIC LICENSE
