@@ -25,9 +25,8 @@
 
     $.fn.ezeInput = function( options ) {
 
-    	if (options instanceof jQuery || typeof options == 'undefined') {
-
-    		if (options instanceof jQuery)
+    	if (typeof options == 'object' || typeof options == 'undefined') {
+    		if (typeof options == 'object')
 	    		$.extend(settings, options);
 
 	    	var input_box = $(this);

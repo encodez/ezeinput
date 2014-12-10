@@ -1,0 +1,37 @@
+.ezeinput_wrapper {
+	width: 100%;
+	border:1px #ccc solid;
+	min-height: 30px;
+	padding-bottom:10px;
+	background: #fff;
+	border:1px #0066CC solid;
+}
+
+.ezeinput_wrapper input[type=text] {
+	border:0;
+	width: auto;
+	float:left;
+	outline: none;
+}
+
+.ezeinput_wrapper .single {
+	background-color: #ccc;
+	border:1px #999 solid;
+	margin:1px;
+	border-radius: 2px;
+	float:left;
+	padding: 1px 5px;
+}
+.ezeinput_wrapper .single .bttnClose {
+	margin-left:5px;
+	cursor: pointer;
+}
+
+.ezeinput_wrapper .single {
+	background: #FFFFCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFCC', endColorstr='#FFCC00'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFCC), to(#FFCC00)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #FFFFCC,  #FFCC00); /* for firefox 3.6+ */
+	box-shadow: 1px 1px 1px #ccc;
+	border: 1px #FF9900 solid;
+}

@@ -34,11 +34,11 @@
 	<style>
 	</style>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="jquery.ezeinput.js"></script>
+	<script src="jquery.ezeinput.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			// input 1
-			$(".ezeinput").ezeInput();
+			$(".ezeinput").ezeInput({close_button:''});
 
 			$("#btn_get_values").click(function() {
 				var vals = $("#names").ezeInput('get');
