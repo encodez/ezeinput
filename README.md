@@ -4,6 +4,7 @@ jQuery mention input
 
 Please follow this link for periodic updates on the documentation http://blog.encodez.com/downloads/ezeinput
 
+![Image of ezeinput](http://blog.encodez.com/wp-content/uploads/2014/11/eze_input.jquery.plugin.png)
 
 ## Dependencies
 
@@ -47,8 +48,9 @@ Attach the jquery plugin. Usually before the body close tag is more preferable.
 
 ## Options
 
-close_button : default (close.gif)
-key_sperator : default 188 (comma)
+>close_button : default (close.gif)
+
+>key_sperator : default 188 (comma)
 
 ```
 $(".ezeinput").ezeInput({
