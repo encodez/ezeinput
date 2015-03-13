@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Example Simple</title>
+    <link href="jquery.ezeinput.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div>
+    <input type="text" value="" id="names" class="ezeinput" /> <br />
+    Enter comma seperated values
+</div>
+<div>
+    <input type="button" value="Get Names" id="btn_get_values" />
+    <input type="button" value="Clear" id="btn_clear_values" />
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="jquery.ezeinput.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // input 1
+        $(".ezeinput").ezeInput({close_button:'close.gif'});
+        $("#btn_get_values").click(function() {
+            var vals = $("#names").ezeInput('get');
+            alert(JSON.stringify(vals));
+        });
+        $("#btn_clear_values").click(function() {
+            $("#names").ezeInput('clear');
+        });
+    });
+</script>
+</body>
+</html>

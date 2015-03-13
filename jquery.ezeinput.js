@@ -1,6 +1,6 @@
 /*!
  * ezeinput - jQuery Plugin
- * version: 1.0 (Tue, 03 Nov 2014)
+ * version: 1.1 (Tue, 13 Feb 2015)
  * @requires jQuery v1.8 or above
  *
  * Examples at https://github.com/encodez/ezeinput
@@ -8,7 +8,7 @@
  *
  * Example and documentation will be available soon at http://blog.encodez.com/ezeinput
  *
- * Copyright 2014 Muneer Shaheed - muneer@encodez.com
+ * Copyright 2015 Muneer Shaheed - muneer@encodez.com
  *
  * I'd love credit or a shoutout, though.
  * twitter: muneerlk
@@ -64,6 +64,11 @@
 
 			return values;
 		}
+
+        else if (options === 'clear') {
+            var input_parent = $(this).closest('.ezeinput_wrapper').find('span.single').remove();
+            $(this).focus();
+        }
 
 		function ezeinputify(input) {
 			var currentVal = input.val();

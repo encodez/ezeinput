@@ -11,7 +11,9 @@
 	border:0;
 	width: auto;
 	float:left;
-	outline: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .ezeinput_wrapper .single {
